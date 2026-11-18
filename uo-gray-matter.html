@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UO Gray Matter | Understanding brain cancer. Advancing hope.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EFEDF4; --surface:#F8F7FB; --ink:#25203A; --muted:#5E5873;
+  --accent:#6A4BB0; --accent-soft:#DDD5F0; --line:#CFC9E0; --on-accent:#fff;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#17141F; --surface:#1E1A2A; --ink:#ECE9F5; --muted:#A9A3BD;
+    --accent:#B9A2F2; --accent-soft:#2B2540; --line:#3A3352; --on-accent:#17141F;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17141F; --surface:#1E1A2A; --ink:#ECE9F5; --muted:#A9A3BD;
+  --accent:#B9A2F2; --accent-soft:#2B2540; --line:#3A3352; --on-accent:#17141F;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.7}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.25rem;padding-bottom:1.25rem;gap:1rem;flex-wrap:wrap}
+.brand{font-family:var(--head);font-weight:700;font-size:1.15rem;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+nav{display:flex;gap:1.5rem;font-family:var(--head);font-weight:500;font-size:.98rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--accent)}
+
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;padding:3rem 0 4.5rem}
+h1{font-family:var(--head);font-weight:700;font-size:clamp(2.6rem,7vw,5rem);line-height:1.02;letter-spacing:-.035em;margin:0 0 1.5rem}
+h1 span{display:block;color:var(--accent)}
+.lede{max-width:34rem;color:var(--muted);margin:0 0 2rem}
+.btn{display:inline-block;font-family:var(--head);font-weight:700;background:var(--accent);color:var(--on-accent);text-decoration:none;padding:.85rem 1.6rem;border-radius:999px}
+.btn:hover{filter:brightness(1.08)}
+.brain{width:100%;height:auto;color:var(--accent)}
+.brain path{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.brain .outline{stroke-width:4;fill:var(--accent-soft)}
+.brain .fold{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.8s ease-out .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+section{padding:4rem 0;border-top:1px solid var(--line)}
+h2{font-family:var(--head);font-weight:700;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.12;letter-spacing:-.025em;margin:0 0 1.25rem}
+.split{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem}
+.split p{margin:0 0 1.1rem;max-width:40rem}
+.statement{font-family:var(--head);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.25;letter-spacing:-.02em;margin:0;max-width:44rem}
+
+.pillars{list-style:none;margin:0;padding:0}
+.pillars li{display:grid;grid-template-columns:1fr 1.6fr;gap:2rem;padding:1.5rem 0;border-top:1px solid var(--line)}
+.pillars li:last-child{border-bottom:1px solid var(--line)}
+.pillars h3{font-family:var(--head);font-weight:700;font-size:1.35rem;margin:0;letter-spacing:-.015em}
+.pillars p{margin:0;color:var(--muted)}
+
+.vision{background:var(--accent-soft);border-radius:1.5rem;padding:3rem 2rem;margin:0}
+.vision h2{margin-bottom:1rem}
+.vision p{max-width:42rem;margin:0 0 1rem}
+
+footer{padding:4rem 0 3rem;border-top:1px solid var(--line)}
+footer .welcome{font-family:var(--head);font-weight:700;font-size:1.6rem;margin:0 0 .35rem;letter-spacing:-.02em}
+footer p{margin:0 0 1.5rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.6rem;margin:0;padding:0;list-style:none;font-family:var(--head);font-weight:500;font-size:.95rem}
+.tags li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:.3rem .9rem}
+
+.empty{border:1px dashed var(--line);border-radius:1rem;padding:1.25rem 1.5rem;color:var(--muted);margin:0;max-width:40rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1.25rem;list-style:none;padding:0;margin:0 0 1.25rem}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.25rem}
+.item h3{font-family:var(--head);font-weight:700;font-size:1.2rem;margin:0 0 .25rem;letter-spacing:-.015em}
+.item p{margin:0;color:var(--muted);font-size:1rem;line-height:1.5}
+.actions p{margin:0 0 1rem;color:var(--muted)}
+.btn[aria-disabled="true"]{background:var(--accent-soft);color:var(--muted);pointer-events:none}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:1.5rem}
+  .brain{max-width:20rem;margin:0 auto;order:-1}
+  .split,.pillars li{grid-template-columns:1fr;gap:.6rem}
+  .vision{padding:2rem 1.25rem}
+  nav{gap:1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .brain .fold{animation:none;stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">UO Gray Matter</a>
+    <nav aria-label="Main">
+      <a href="#about">Who we are</a>
+      <a href="#pillars">What we do</a>
+      <a href="#glia">Glia</a>
+      <a href="#events">Events</a>
+      <a href="#team">Team</a>
+      <a href="#join">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>Understanding brain cancer. <span>Advancing hope.</span></h1>
+      <p class="lede">UO Gray Matter is a student-led initiative at the University of Ottawa raising awareness about brain tumours and brain cancer, and making the science behind them easier to reach.</p>
+      <a class="btn" href="#about">Read our story</a>
+    </div>
+    <svg class="brain" viewBox="0 0 400 340" role="img" aria-label="Line drawing of a brain">
+      <path class="outline" d="M200 36c-26-22-70-18-92 8-28 2-52 26-50 56-20 16-26 46-10 68-6 28 14 52 42 54 14 22 46 30 68 14 22 16 54 8 68-14 28-2 48-26 42-54 16-22 10-52-10-68 2-30-22-54-50-56-22-26-66-30-92-8z"/>
+      <path class="fold" pathLength="1" d="M200 40v248"/>
+      <path class="fold" pathLength="1" d="M200 82c-24-8-44 4-52 22 14 8 30 4 40-6"/>
+      <path class="fold" pathLength="1" d="M200 140c-30-4-56 8-66 28 18 10 40 4 52-10"/>
+      <path class="fold" pathLength="1" d="M200 200c-26-2-50 10-56 30 16 8 36 2 46-10"/>
+      <path class="fold" pathLength="1" d="M200 82c24-8 44 4 52 22-14 8-30 4-40-6"/>
+      <path class="fold" pathLength="1" d="M200 140c30-4 56 8 66 28-18 10-40 4-52-10"/>
+      <path class="fold" pathLength="1" d="M200 200c26-2 50 10 56 30-16 8-36 2-46-10"/>
+    </svg>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="statement">Brain tumours are more than a medical diagnosis. They affect individuals, families, and entire communities.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <h2>Who we are</h2>
+      <div>
+        <p>UO Gray Matter is a student-led initiative at the University of Ottawa dedicated to raising awareness about brain tumours and brain cancer, making scientific knowledge more accessible, and encouraging meaningful engagement with research.</p>
+        <p>Through education, awareness campaigns, research engagement, and patient and survivor voices, we hope to bridge the gap between science and the community.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pillars">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <ul class="pillars">
+        <li><h3>Education</h3><p>Making scientific knowledge about brain tumours more accessible to everyone, not only those who study it.</p></li>
+        <li><h3>Awareness campaigns</h3><p>Raising awareness about brain tumours and brain cancer at the University of Ottawa and in the wider community.</p></li>
+        <li><h3>Research engagement</h3><p>Encouraging meaningful engagement with the research that moves understanding and treatment forward.</p></li>
+        <li><h3>Patient and survivor voices</h3><p>Listening to the people who live with brain tumours, and to the families and communities around them.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="vision">
+    <div class="wrap">
+      <div class="vision">
+        <h2>More than awareness</h2>
+        <p>Gray Matter is about building a community that believes in the importance of research, the power of knowledge, and the possibility of a better future.</p>
+        <p>This initiative is also the first step toward a bigger vision: <strong>NeuroHope Canada</strong>.</p>
+      </div>
+    </div>
+  </section>
+  <section id="glia">
+    <div class="wrap split">
+      <h2>Glia, our weekly blog</h2>
+      <div>
+        <p>Glia is Gray Matter’s weekly blog on brain tumours, written to make the science easier to follow.</p>
+        <p class="empty">The first posts are on their way. Check back soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="wrap">
+      <h2>Events in <span id="month">this month</span></h2>
+      <ul class="grid" id="eventList"></ul>
+      <p class="empty" id="eventEmpty">No events are posted for this month yet. Check back soon.</p>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="wrap">
+      <h2>Meet the team</h2>
+      <ul class="grid" id="teamList"></ul>
+      <p class="empty" id="teamEmpty">Our team will be introduced here soon.</p>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <h2>Be part of Gray Matter</h2>
+      <ul class="pillars actions">
+        <li><h3>Join us</h3><div><p>Help us build Gray Matter and the bigger vision behind NeuroHope Canada.</p><a class="btn" data-link="join" aria-disabled="true">Join us</a></div></li>
+        <li><h3>Become a member</h3><div><p>Become part of a community that believes in research, knowledge, and a better future.</p><a class="btn" data-link="member" aria-disabled="true">Become a member</a></div></li>
+        <li><h3>Donate</h3><div><p>Support our work to bring understanding and hope to people affected by brain tumours.</p><a class="btn" data-link="donate" aria-disabled="true">Donate</a></div></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="welcome">Welcome to Gray Matter. 💜</p>
+    <p>Understanding brain cancer. Advancing hope.</p>
+    <ul class="tags" aria-label="Hashtags">
+      <li>#UOGrayMatter</li>
+      <li>#BrainCancerAwareness</li>
+      <li>#BrainTumourResearch</li>
+      <li>#UniversityOfOttawa</li>
+      <li>#NeuroHope</li>
+    </ul>
+  </div>
+</footer>
+<script>
+// Fill these in as details are ready. Empty lists and links show a friendly placeholder.
+const LINKS = { join: "", member: "", donate: "" };
+const EVENTS = []; // { title, date, place, link }
+const TEAM = [];   // { name, role }
+
+function fill(listId, emptyId, items, build) {
+  const list = document.getElementById(listId);
+  document.getElementById(emptyId).hidden = items.length > 0;
+  items.forEach(function (it) {
+    const li = document.createElement("li");
+    li.className = "item";
+    build(li, it);
+    list.appendChild(li);
+  });
+}
+function add(li, tag, text) {
+  const el = document.createElement(tag);
+  el.textContent = text || "";
+  li.appendChild(el);
+}
+
+document.getElementById("month").textContent =
+  new Date().toLocaleDateString("en-CA", { month: "long", year: "numeric" });
+
+fill("eventList", "eventEmpty", EVENTS, function (li, e) {
+  add(li, "h3", e.title);
+  add(li, "p", [e.date, e.place].filter(Boolean).join(", "));
+});
+fill("teamList", "teamEmpty", TEAM, function (li, m) {
+  add(li, "h3", m.name);
+  add(li, "p", m.role);
+});
+
+document.querySelectorAll("[data-link]").forEach(function (a) {
+  const url = LINKS[a.dataset.link];
+  if (url) { a.href = url; a.removeAttribute("aria-disabled"); }
+  else { a.textContent += " (opening soon)"; }
+});
+</script>
+</body>
+</html>
